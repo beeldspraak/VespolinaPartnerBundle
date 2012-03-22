@@ -11,7 +11,7 @@ namespace Vespolina\PartnerBundle\Model;
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * Abstract implementation of Partner
+ * Implementation of PartnerInterface
  * 
  * @author Willem-Jan Zijderveld <willemjan@beeldspraak.com>
  */
@@ -26,18 +26,15 @@ class Partner implements PartnerInterface
 	
 	protected $partnerId;
 	protected $partnerSince;
-	protected $role;
-	protected $shortName;
-	protected $longName;
+	protected $roles;
+	protected $name;
 	protected $type;
 	protected $valuta;
 	protected $language;
 	protected $paymentTerms;
 	protected $paymentType;
-	protected $email;
-	protected $phone;
 	protected $addresses;
-	protected $contacts;
+	protected $primaryContact;
 	protected $personalDetails;
 	protected $organisationDetails;
 
@@ -74,27 +71,51 @@ class Partner implements PartnerInterface
 	/**
 	 * @inheritdoc
 	 */
-	public function setPartnerSince(DateTime $partnerSince)
+	public function setPartnerSince(\DateTime $partnerSince)
 	{
 		$this->partnerSince = $partnerSince;
 	}
 
 	/**
-	 * @return string $role
+	 * @inheritdoc
 	 */
-	public function getRole()
+	public function getRoles()
 	{
-		return $this->role;
+		return $this->roles;
 	}
 
 	/**
-	 * @param string $role
+	 * @inheritdoc
 	 */
-	public function setRole($role)
+	public function addRole($role)
 	{
-		$this->role = $role;
+		$this->roles[] = $role;
 	}
 	
+	/**
+	 * @inheritdoc
+	 */
+	public function setRoles($roles)
+	{
+		$this->roles = $roles;
+	}
+	
+	/**
+	 * @inheritdoc
+	 */
+	public function getName()
+	{
+		return $this->name;
+	}
+
+	/**
+	 * @inheritdoc
+	 */
+	public function setName($name)
+	{
+		$this->name = $name;
+	}
+
 	/**
 	 * @inheritdoc
 	 */
@@ -111,22 +132,6 @@ class Partner implements PartnerInterface
 		$this->shortName = $shortName;
 	}
 	
-	/**
-	 * @return the $longName
-	 */
-	public function getLongName()
-	{
-		return $this->longName;
-	}
-
-	/**
-	 * @param field_type $longName
-	 */
-	public function setLongName($longName)
-	{
-		$this->longName = $longName;
-	}
-
 	/**
 	 * @inheritdoc
 	 */
@@ -194,38 +199,6 @@ class Partner implements PartnerInterface
 	/**
 	 * @inheritdoc
 	 */
-	public function getEmail()
-	{
-		return $this->email;
-	}
-
-	/**
-	 * @inheritdoc
-	 */
-	public function setEmail($email)
-	{
-		$this->email = $email;
-	}
-
-	/**
-	 * @inheritdoc
-	 */
-	public function getPhone()
-	{
-		return $this->phone;
-	}
-
-	/**
-	 * @inheritdoc
-	 */
-	public function setPhone($phone)
-	{
-		$this->phone = $phone;
-	}
-
-	/**
-	 * @inheritdoc
-	 */
 	public function getAddresses()
 	{
 		return $this->addresses;
@@ -250,25 +223,17 @@ class Partner implements PartnerInterface
 	/**
 	 * @inheritdoc
 	 */
-	public function getContacts()
+	public function getPrimaryContact()
 	{
-		return $this->contacts;
+		return $this->primaryContact;
 	}
 
 	/**
 	 * @inheritdoc
 	 */
-	public function setContacts($contacts)
+	public function setPrimaryContact(PrimaryContact $primaryContact)
 	{
-		$this->contacts = $contacts;
-	}
-
-	/**
-	 * @inheritdoc
-	 */
-	public function addContact($contact)
-	{
-		$this->contacts[] = $contact;
+		$this->primaryContact = $primaryContact;
 	}
 
 	/**

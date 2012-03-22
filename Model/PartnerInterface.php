@@ -33,7 +33,7 @@ interface PartnerInterface
 	 * Date since when this partner joined
 	 * @param DateTime $partnerSince
 	 */
-	function setPartnerSince(DateTime $partnerSince);
+	function setPartnerSince(\DateTime $partnerSince);
 	
 	/**
 	 * @return DateTime
@@ -44,69 +44,35 @@ interface PartnerInterface
 	 * THe role of the Partner (e.g. Customer, Supplier, Employee)
 	 * @return string
 	 */
-	function getRole();
+	function getRoles();
 	
 	/**
-	 * Sets the role of the partner
+	 * Adds a role to the current Partner
 	 * 
-	 * @param string $role
+	 * @param \Vespolina\PartnerBundle\Model\Role $role
 	 */
-	function setRole($role);
+	function addRole($role);
 	
 	/**
-	 * Sets the partners shortname
+	 * Sets the roles of the partner
 	 * 
-	 * @param string $shortName
+	 * @param \Vespolina\PartnerBundle\Model\Role[] $roles
 	 */
-	function setShortName($shortName);
-	
+	function setRoles($roles);
+
 	/**
-	 * Shortname of partner
+	 * Sets the name of the partner
 	 * 
-	 * @return string
+	 * @param string $ame
 	 */
-	function getShortName();
+	function setName($name);
 	
 	/**
-	 * Sets the long name
-	 * 
-	 * @param string $longName
-	 */
-	function setLongName($longName);
-	
-	/**
-	 * Long name for partner
+	 * Name for partner
 	 * 
 	 * @return string
 	 */
-	function getLongName();
-	
-	/**
-	 * Sets the partners phone number
-	 * 
-	 * @param string $phone
-	 */
-	function setPhone($phone);
-	
-	/**
-	 * Primary phone number
-	 * 
-	 * @return string
-	 */
-	function getPhone();
-	
-	/**
-	 * Sets the partners emailaddress
-	 * @param string $email
-	 */
-	function setEmail($email);
-	
-	/**
-	 * Primary email address for communication
-	 * 
-	 * @return string
-	 */
-	function getEmail();
+	function getName();
 
 	/**
 	 * Sets the partners default valuta (ISO-4217)
@@ -183,25 +149,18 @@ interface PartnerInterface
 	function getAddresses();
 	
 	/**
-	 * Sets the partners contacts
+	 * Sets the partners primary contact
 	 * 
-	 * @param \Vespolina\CommonBundle\Model\Contact[] $contacts - Iterable contact collection
+	 * @param \Vespolina\PartnerBundle\Model\PrimaryContact $contact
 	 */
-	function setContacts($contacts);
+	function setPrimaryContact(PrimaryContact $contact);
 	
 	/**
-	 * Adds a partners Contact
+	 * Primary Contact for this accounts
 	 * 
-	 * @param \Vespolina\CommonBundle\Model\Contact $contact
+	 * @return \Vespolina\PartnerBundle\Model\PrimaryContact
 	 */
-	function addContact($contact);
-	
-	/**
-	 * Contacts for this accounts
-	 * 
-	 * @return \Vespolina\CommonBundle\Model\Contact[]
-	 */
-	function getContacts();
+	function getPrimaryContact();
 	
 	/**
 	 * Sets the personal details for this partner

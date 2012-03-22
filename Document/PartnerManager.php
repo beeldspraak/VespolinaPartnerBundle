@@ -7,6 +7,8 @@
  */
 namespace Vespolina\PartnerBundle\Document;
 
+use Symfony\Component\DependencyInjection\Container;
+
 use Vespolina\PartnerBundle\Model\PartnerManager as BasePartnerManager;
 use Vespolina\PartnerBundle\Model\Partner as AbstractPartner;
 
@@ -35,17 +37,9 @@ class PartnerManager extends BasePartnerManager
 		$this->dm 			= $container->get('doctrine.odm.mongodb.default_document_manager');
 		$this->partnerClass	= $partnerClass;
 		
-		$this->repo 		= $this->dm->getRepository('Partner');
+		$this->repo 		= $this->dm->getRepository('Vespolina\PartnerBundle\Document\Partner');
 	}
 	
-	public function createPartner($role = Partner::ROLE_CUSTOMER, $type = Partner::INDIVIDUAL)
-	{
-		/* @var $partner Partner */
-		$partner = new $this->partnerClass;
-		$partner->setRole($role);
-		$partner->setType($type);
-	}
-
 	public function findByPartnerId($partnerId)
 	{
 		return $this->repo->findOneBy(array('partnerId' => $partnerId));
