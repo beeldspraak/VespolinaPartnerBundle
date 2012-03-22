@@ -11,5 +11,5 @@ use Doctrine\ODM\MongoDB\DocumentRepository;
 
 class PartnerRepository extends DocumentRepository
 {
-	
+    
 }

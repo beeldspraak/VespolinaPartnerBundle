@@ -9,5 +9,5 @@ namespace Vespolina\PartnerBundle\Model;
 
 class PersonalDetails
 {
-	protected $nationalIdentificationNumber; // shorter?
+    protected $nationalIdentificationNumber; // shorter?
 }

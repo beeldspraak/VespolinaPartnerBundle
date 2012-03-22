@@ -17,255 +17,254 @@ use Doctrine\Common\Collections\ArrayCollection;
  */
 class Partner implements PartnerInterface
 {
-	const INDIVIDUAL 	= 'individual';
-	const ORGANISATION 	= 'organisation';
-	
-	const ROLE_CUSTOMER = 'customer';
-	const ROLE_EMPLOYEE	= 'employee';
-	const ROLE_SUPPLIER	= 'supplier';
-	
-	protected $partnerId;
-	protected $partnerSince;
-	protected $roles;
-	protected $name;
-	protected $type;
-	protected $valuta;
-	protected $language;
-	protected $paymentTerms;
-	protected $paymentType;
-	protected $addresses;
-	protected $primaryContact;
-	protected $personalDetails;
-	protected $organisationDetails;
+    const INDIVIDUAL       = 'individual';
+    const ORGANISATION     = 'organisation';
+    
+    const ROLE_CUSTOMER    = 'ROLE_CUSTOMER';
+    const ROLE_EMPLOYEE    = 'ROLE_EMPLOYEE';
+    const ROLE_SUPPLIER    = 'ROLE_SUPPLIER';
+    
+    protected $partnerId;
+    protected $partnerSince;
+    protected $roles;
+    protected $name;
+    protected $type;
+    protected $valuta;
+    protected $language;
+    protected $paymentTerms;
+    protected $paymentType;
+    protected $addresses;
+    protected $primaryContact;
+    protected $personalDetails;
+    protected $organisationDetails;
 
-	public function __construct()
-	{
-		$this->addresses = new ArrayCollection();
-		$this->contacts = new ArrayCollection();
-	}
+    public function __construct()
+    {
+        $this->addresses = new ArrayCollection();
+    }
 
-	/**
-	 * @inheritdoc
-	 */
-	public function getPartnerId()
-	{
-		return $this->partnerId;
-	}
+    /**
+     * @inheritdoc
+     */
+    public function getPartnerId()
+    {
+        return $this->partnerId;
+    }
 
-	/**
-	 * @inheritdoc
-	 */
-	public function setPartnerId($partnerId)
-	{
-		$this->partnerId = $partnerId;
-	}
-	
-	/**
-	 * @inheritdoc
-	 */
-	public function getPartnerSince()
-	{
-		return $this->partnerSince;
-	}
-	
-	/**
-	 * @inheritdoc
-	 */
-	public function setPartnerSince(\DateTime $partnerSince)
-	{
-		$this->partnerSince = $partnerSince;
-	}
+    /**
+     * @inheritdoc
+     */
+    public function setPartnerId($partnerId)
+    {
+        $this->partnerId = $partnerId;
+    }
+    
+    /**
+     * @inheritdoc
+     */
+    public function getPartnerSince()
+    {
+        return $this->partnerSince;
+    }
+    
+    /**
+     * @inheritdoc
+     */
+    public function setPartnerSince(\DateTime $partnerSince)
+    {
+        $this->partnerSince = $partnerSince;
+    }
 
-	/**
-	 * @inheritdoc
-	 */
-	public function getRoles()
-	{
-		return $this->roles;
-	}
+    /**
+     * @inheritdoc
+     */
+    public function getRoles()
+    {
+        return $this->roles;
+    }
 
-	/**
-	 * @inheritdoc
-	 */
-	public function addRole($role)
-	{
-		$this->roles[] = $role;
-	}
-	
-	/**
-	 * @inheritdoc
-	 */
-	public function setRoles($roles)
-	{
-		$this->roles = $roles;
-	}
-	
-	/**
-	 * @inheritdoc
-	 */
-	public function getName()
-	{
-		return $this->name;
-	}
+    /**
+     * @inheritdoc
+     */
+    public function addRole($role)
+    {
+        $this->roles[] = $role;
+    }
+    
+    /**
+     * @inheritdoc
+     */
+    public function setRoles($roles)
+    {
+        $this->roles = $roles;
+    }
+    
+    /**
+     * @inheritdoc
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
 
-	/**
-	 * @inheritdoc
-	 */
-	public function setName($name)
-	{
-		$this->name = $name;
-	}
+    /**
+     * @inheritdoc
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
 
-	/**
-	 * @inheritdoc
-	 */
-	public function getShortName()
-	{
-		return $this->shortName;
-	}
+    /**
+     * @inheritdoc
+     */
+    public function getShortName()
+    {
+        return $this->shortName;
+    }
 
-	/**
-	 * @inheritdoc
-	 */
-	public function setShortName($shortName)
-	{
-		$this->shortName = $shortName;
-	}
-	
-	/**
-	 * @inheritdoc
-	 */
-	public function getType()
-	{
-		return $this->type;
-	}
+    /**
+     * @inheritdoc
+     */
+    public function setShortName($shortName)
+    {
+        $this->shortName = $shortName;
+    }
+    
+    /**
+     * @inheritdoc
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
 
-	/**
-	 * @inheritdoc
-	 */
-	public function setType($type)
-	{
-		$this->type = $type;
-	}
+    /**
+     * @inheritdoc
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+    }
 
-	/**
-	 * @inheritdoc
-	 */
-	public function getValuta()
-	{
-		return $this->valuta;
-	}
+    /**
+     * @inheritdoc
+     */
+    public function getValuta()
+    {
+        return $this->valuta;
+    }
 
-	/**
-	 * @inheritdoc
-	 */
-	public function setValuta($valuta)
-	{
-		$this->valuta = $valuta;
-	}
+    /**
+     * @inheritdoc
+     */
+    public function setValuta($valuta)
+    {
+        $this->valuta = $valuta;
+    }
 
-	/**
-	 * @inheritdoc
-	 */
-	public function getLanguage()
-	{
-		return $this->language;
-	}
+    /**
+     * @inheritdoc
+     */
+    public function getLanguage()
+    {
+        return $this->language;
+    }
 
-	/**
-	 * @inheritdoc
-	 */
-	public function setLanguage($language)
-	{
-		$this->language = $language;
-	}
+    /**
+     * @inheritdoc
+     */
+    public function setLanguage($language)
+    {
+        $this->language = $language;
+    }
 
-	/**
-	 * @inheritdoc
-	 */
-	public function getPaymentTerms()
-	{
-		return $this->paymentTerms;
-	}
+    /**
+     * @inheritdoc
+     */
+    public function getPaymentTerms()
+    {
+        return $this->paymentTerms;
+    }
 
-	/**
-	 * @inheritdoc
-	 */
-	public function setPaymentTerms($paymentTerms)
-	{
-		$this->paymentTerms = $paymentTerms;
-	}
+    /**
+     * @inheritdoc
+     */
+    public function setPaymentTerms($paymentTerms)
+    {
+        $this->paymentTerms = $paymentTerms;
+    }
 
-	/**
-	 * @inheritdoc
-	 */
-	public function getAddresses()
-	{
-		return $this->addresses;
-	}
+    /**
+     * @inheritdoc
+     */
+    public function getAddresses()
+    {
+        return $this->addresses;
+    }
 
-	/**
-	 * @inheritdoc
-	 */
-	public function setAddresses($addresses)
-	{
-		$this->addresses = $addresses;
-	}
+    /**
+     * @inheritdoc
+     */
+    public function setAddresses($addresses)
+    {
+        $this->addresses = $addresses;
+    }
 
-	/**
-	 * @inheritdoc
-	 */
-	public function addAddress($address)
-	{
-		$this->addresses[] = $address;
-	}
+    /**
+     * @inheritdoc
+     */
+    public function addAddress($address)
+    {
+        $this->addresses[] = $address;
+    }
 
-	/**
-	 * @inheritdoc
-	 */
-	public function getPrimaryContact()
-	{
-		return $this->primaryContact;
-	}
+    /**
+     * @inheritdoc
+     */
+    public function getPrimaryContact()
+    {
+        return $this->primaryContact;
+    }
 
-	/**
-	 * @inheritdoc
-	 */
-	public function setPrimaryContact(PrimaryContact $primaryContact)
-	{
-		$this->primaryContact = $primaryContact;
-	}
+    /**
+     * @inheritdoc
+     */
+    public function setPrimaryContact(PrimaryContact $primaryContact)
+    {
+        $this->primaryContact = $primaryContact;
+    }
 
-	/**
-	 * @inheritdoc
-	 */
-	public function getPersonalDetails()
-	{
-		return $this->personalDetails;
-	}
+    /**
+     * @inheritdoc
+     */
+    public function getPersonalDetails()
+    {
+        return $this->personalDetails;
+    }
 
-	/**
-	 * @inheritdoc
-	 */
-	public function setPersonalDetails($personalDetails)
-	{
-		$this->personalDetails = $personalDetails;
-	}
+    /**
+     * @inheritdoc
+     */
+    public function setPersonalDetails($personalDetails)
+    {
+        $this->personalDetails = $personalDetails;
+    }
 
-	/**
-	 * @inheritdoc
-	 */
-	public function getOrganisationDetails()
-	{
-		return $this->organisationDetails;
-	}
+    /**
+     * @inheritdoc
+     */
+    public function getOrganisationDetails()
+    {
+        return $this->organisationDetails;
+    }
 
-	/**
-	 * @inheritdoc
-	 */
-	public function setOrganisationDetails($organisationDetails)
-	{
-		$this->organisationDetails = $organisationDetails;
-	}
+    /**
+     * @inheritdoc
+     */
+    public function setOrganisationDetails($organisationDetails)
+    {
+        $this->organisationDetails = $organisationDetails;
+    }
 
 }

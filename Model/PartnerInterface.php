@@ -15,178 +15,178 @@ namespace Vespolina\PartnerBundle\Model;
  */
 interface PartnerInterface
 {
-	/**
-	 * Sets the partnerId
-	 * 
-	 * @param string $partnerId
-	 */
-	function setPartnerId($partnerId);
-	
-	/**
-	 * Functional partner id
-	 * 
-	 * @return string
-	 */
-	function getPartnerId();
-	
-	/**
-	 * Date since when this partner joined
-	 * @param DateTime $partnerSince
-	 */
-	function setPartnerSince(\DateTime $partnerSince);
-	
-	/**
-	 * @return DateTime
-	 */
-	function getPartnerSince();
+    /**
+     * Sets the partnerId
+     * 
+     * @param string $partnerId
+     */
+    function setPartnerId($partnerId);
+    
+    /**
+     * Functional partner id
+     * 
+     * @return string
+     */
+    function getPartnerId();
+    
+    /**
+     * Date since when this partner joined
+     * @param DateTime $partnerSince
+     */
+    function setPartnerSince(\DateTime $partnerSince);
+    
+    /**
+     * @return DateTime
+     */
+    function getPartnerSince();
 
-	/**
-	 * THe role of the Partner (e.g. Customer, Supplier, Employee)
-	 * @return string
-	 */
-	function getRoles();
-	
-	/**
-	 * Adds a role to the current Partner
-	 * 
-	 * @param \Vespolina\PartnerBundle\Model\Role $role
-	 */
-	function addRole($role);
-	
-	/**
-	 * Sets the roles of the partner
-	 * 
-	 * @param \Vespolina\PartnerBundle\Model\Role[] $roles
-	 */
-	function setRoles($roles);
+    /**
+     * THe role of the Partner (e.g. Customer, Supplier, Employee)
+     * @return string
+     */
+    function getRoles();
+    
+    /**
+     * Adds a role to the current Partner
+     * 
+     * @param string $role
+     */
+    function addRole($role);
+    
+    /**
+     * Sets the roles of the partner
+     * 
+     * @param array $roles
+     */
+    function setRoles($roles);
 
-	/**
-	 * Sets the name of the partner
-	 * 
-	 * @param string $ame
-	 */
-	function setName($name);
-	
-	/**
-	 * Name for partner
-	 * 
-	 * @return string
-	 */
-	function getName();
+    /**
+     * Sets the name of the partner
+     * 
+     * @param string $ame
+     */
+    function setName($name);
+    
+    /**
+     * Name for partner
+     * 
+     * @return string
+     */
+    function getName();
 
-	/**
-	 * Sets the partners default valuta (ISO-4217)
-	 * @param string $valuta
-	 */
-	function setValuta($valuta);
-	
-	/**
-	 * Default valuta for partner
-	 * 
-	 * @return string - ISO-4217
-	 */
-	function getValuta();
-	
-	/**
-	 * Sets the partners default language
-	 * 
-	 * @param string $language - IETF tag
-	 */
-	function setLanguage($language);
-	
-	/**
-	 * Default language for partner
-	 * 
-	 * @return string - IETF tag
-	 */
-	function getLanguage();
-	
-	/**
-	 * Sets the default payment terms for customer
-	 * 
-	 * @param string $paymentTerms
-	 */
-	function setPaymentTerms($paymentTerms);
-	
-	/**
-	 * Default payment terms for partner
-	 */
-	function getPaymentTerms();
-	
-	/**
-	 * Sets the partners type
-	 * 
-	 * @param string $type
-	 */
-	function setType($type);
-	
-	/**
-	 * Discriminator field
-	 * 
-	 * @return string
-	 */
-	function getType();
-	
-	/**
-	 * Sets the partners addresses
-	 * 
-	 * @param \Vespolina\CommonBundle\Model\Address[] $addresses
-	 */
-	function setAddresses($addresses);
-	
-	/**
-	 * Adds a partners address
-	 * 
-	 * @param \Vespolina\CommonBundle\Model\Address $address
-	 */
-	function addAddress($address);
-	
-	/**
-	 * Addresses for this account
-	 * 
-	 * @return \Vespolina\CommonBundle\Model\Address[]
-	 */
-	function getAddresses();
-	
-	/**
-	 * Sets the partners primary contact
-	 * 
-	 * @param \Vespolina\PartnerBundle\Model\PrimaryContact $contact
-	 */
-	function setPrimaryContact(PrimaryContact $contact);
-	
-	/**
-	 * Primary Contact for this accounts
-	 * 
-	 * @return \Vespolina\PartnerBundle\Model\PrimaryContact
-	 */
-	function getPrimaryContact();
-	
-	/**
-	 * Sets the personal details for this partner
-	 * 
-	 * @param $personalDetails
-	 */
-	function setPersonalDetails($personalDetails);
-	
-	/**
-	 * Personal details of partner (used for type individual)
-	 * 
-	 * @return mixed
-	 */
-	function getPersonalDetails();
-	
-	/**
-	 * Sets the organistaion details
-	 * 
-	 * @param $organisationDetails
-	 */
-	function setOrganisationDetails($organisationDetails);
-	
-	/**
-	 * The organistaion details for this partner (used for type organisation)
-	 * 
-	 * @return mixed
-	 */
-	function getOrganisationDetails();
+    /**
+     * Sets the partners default valuta (ISO-4217)
+     * @param string $valuta
+     */
+    function setValuta($valuta);
+    
+    /**
+     * Default valuta for partner
+     * 
+     * @return string - ISO-4217
+     */
+    function getValuta();
+    
+    /**
+     * Sets the partners default language
+     * 
+     * @param string $language - IETF tag
+     */
+    function setLanguage($language);
+    
+    /**
+     * Default language for partner
+     * 
+     * @return string - IETF tag
+     */
+    function getLanguage();
+    
+    /**
+     * Sets the default payment terms for customer
+     * 
+     * @param string $paymentTerms
+     */
+    function setPaymentTerms($paymentTerms);
+    
+    /**
+     * Default payment terms for partner
+     */
+    function getPaymentTerms();
+    
+    /**
+     * Sets the partners type
+     * 
+     * @param string $type
+     */
+    function setType($type);
+    
+    /**
+     * Discriminator field
+     * 
+     * @return string
+     */
+    function getType();
+    
+    /**
+     * Sets the partners addresses
+     * 
+     * @param \Vespolina\CommonBundle\Model\Address[] $addresses
+     */
+    function setAddresses($addresses);
+    
+    /**
+     * Adds a partners address
+     * 
+     * @param \Vespolina\CommonBundle\Model\Address $address
+     */
+    function addAddress($address);
+    
+    /**
+     * Addresses for this account
+     * 
+     * @return \Vespolina\CommonBundle\Model\Address[]
+     */
+    function getAddresses();
+    
+    /**
+     * Sets the partners primary contact
+     * 
+     * @param \Vespolina\PartnerBundle\Model\PrimaryContact $contact
+     */
+    function setPrimaryContact(PrimaryContact $contact);
+    
+    /**
+     * Primary Contact for this accounts
+     * 
+     * @return \Vespolina\PartnerBundle\Model\PrimaryContact
+     */
+    function getPrimaryContact();
+    
+    /**
+     * Sets the personal details for this partner
+     * 
+     * @param $personalDetails
+     */
+    function setPersonalDetails($personalDetails);
+    
+    /**
+     * Personal details of partner (used for type individual)
+     * 
+     * @return mixed
+     */
+    function getPersonalDetails();
+    
+    /**
+     * Sets the organistaion details
+     * 
+     * @param $organisationDetails
+     */
+    function setOrganisationDetails($organisationDetails);
+    
+    /**
+     * The organistaion details for this partner (used for type organisation)
+     * 
+     * @return mixed
+     */
+    function getOrganisationDetails();
 }

@@ -12,10 +12,10 @@ use Vespolina\PartnerBundle\Model\Partner as AbstractPartner;
 
 abstract class BasePartner extends AbstractPartner
 {
-	protected $_id;
+    protected $_id;
 
-	public function getId()
-	{
-		return $this->_id;
-	}
+    public function getId()
+    {
+        return $this->_id;
+    }
 }

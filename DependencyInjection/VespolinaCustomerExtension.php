@@ -20,7 +20,7 @@ class VespolinaPartnerExtension extends Extension
     public function load(array $configs, ContainerBuilder $container)
     {
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
-		
+        
         foreach (array('mongodb') as $basename) {
             $loader->load(sprintf('%s.xml', $basename));
         }

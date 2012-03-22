@@ -10,5 +10,5 @@ namespace Vespolina\PartnerBundle\Document;
 
 class Partner extends BasePartner
 {
-		
+        
 }

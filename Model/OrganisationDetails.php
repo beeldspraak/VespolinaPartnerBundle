@@ -9,7 +9,7 @@ namespace Vespolina\PartnerBundle\Model;
 
 class OrganisationDetails
 {
-	protected $name;
-	protected $category;
-	protected $employees;
+    protected $name;
+    protected $category;
+    protected $employees;
 }
