@@ -29,7 +29,7 @@ class Partner implements PartnerInterface
     protected $roles;
     protected $name;
     protected $type;
-    protected $valuta;
+    protected $currency;
     protected $language;
     protected $paymentTerms;
     protected $paymentType;
@@ -150,17 +150,17 @@ class Partner implements PartnerInterface
     /**
      * @inheritdoc
      */
-    public function getValuta()
+    public function getCurrency()
     {
-        return $this->valuta;
+        return $this->currency;
     }
 
     /**
      * @inheritdoc
      */
-    public function setValuta($valuta)
+    public function setCurrency($currency)
     {
-        $this->valuta = $valuta;
+        $this->currency = $currency;
     }
 
     /**

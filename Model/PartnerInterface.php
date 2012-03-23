@@ -75,17 +75,17 @@ interface PartnerInterface
     function getName();
 
     /**
-     * Sets the partners default valuta (ISO-4217)
-     * @param string $valuta
+     * Sets the partners default currency (ISO-4217)
+     * @param string $currency
      */
-    function setValuta($valuta);
+    function setCurrency($currency);
     
     /**
-     * Default valuta for partner
+     * Default currency for partner
      * 
      * @return string - ISO-4217
      */
-    function getValuta();
+    function getCurrency();
     
     /**
      * Sets the partners default language
