@@ -7,7 +7,24 @@
  */
 namespace Vespolina\PartnerBundle\Model;
 
-class PersonalDetails
+class PersonalDetails implements PersonalDetailsInterface
 {
-    protected $nationalIdentificationNumber; // shorter?
+    protected $nationalIdentificationNumber;
+    
+	/**
+	 * {@inheritdoc}
+	 */
+    public function getNationalIdentificationNumber()
+    {
+       return $this->nationalIdentificationNumber;
+    }
+
+	/**
+	 * {@inheritdoc}
+	 */
+    public function setNationalIdentificationNumber($nationalIdentificationNumber)
+    {
+        $this->nationalIdentificationNumber = $nationalIdentificationNumber;
+    }
+
 }

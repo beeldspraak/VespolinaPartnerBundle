@@ -151,14 +151,14 @@ interface PartnerInterface
     /**
      * Sets the partners primary contact
      * 
-     * @param \Vespolina\PartnerBundle\Model\PrimaryContact $contact
+     * @param \Vespolina\PartnerBundle\Model\Contact $contact
      */
-    function setPrimaryContact(PrimaryContact $contact);
+    function setPrimaryContact(Contact $contact);
     
     /**
      * Primary Contact for this accounts
      * 
-     * @return \Vespolina\PartnerBundle\Model\PrimaryContact
+     * @return \Vespolina\PartnerBundle\Model\Contact
      */
     function getPrimaryContact();
     

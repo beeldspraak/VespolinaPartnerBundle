@@ -7,9 +7,60 @@
  */
 namespace Vespolina\PartnerBundle\Model;
 
-class OrganisationDetails
+class OrganisationDetails implements OrganisationDetailsInterface
 {
     protected $name;
     protected $category;
     protected $employees;
+    
+	/**
+     * {@inheritdoc}
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+	/**
+     * {@inheritdoc}
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+	/**
+     * {@inheritdoc}
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+	/**
+     * {@inheritdoc}
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+    }
+
+	/**
+     * {@inheritdoc}
+     */
+    public function getEmployees()
+    {
+        return $this->employees;
+    }
+
+	/**
+     * {@inheritdoc}
+     */
+    public function setEmployees($employees)
+    {
+        $this->employees = $employees;
+    }
+
+	
+        
 }

@@ -7,7 +7,7 @@
  */
 namespace Vespolina\PartnerBundle\Model;
 
-interface PrimaryContactInterface
+interface ContactInterface
 {
     /**
      * Sets the contacts phone number

@@ -7,7 +7,7 @@
  */
 namespace Vespolina\PartnerBundle\Model;
 
-class PrimaryContact
+class Contact implements ContactInterface
 {
     protected $email;
     protected $phone;

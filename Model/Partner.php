@@ -230,7 +230,7 @@ class Partner implements PartnerInterface
     /**
      * @inheritdoc
      */
-    public function setPrimaryContact(PrimaryContact $primaryContact)
+    public function setPrimaryContact(Contact $primaryContact)
     {
         $this->primaryContact = $primaryContact;
     }
