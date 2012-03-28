@@ -8,9 +8,9 @@
 
 namespace Vespolina\PartnerBundle\Document;
 
-use Vespolina\PartnerBundle\Model\Partner as AbstractPartner;
+use Vespolina\PartnerBundle\Model\Address as AbstractAddress;
 
-abstract class BasePartner extends AbstractPartner
+abstract class BaseAddress extends AbstractAddress
 {
     protected $id;
 

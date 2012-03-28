@@ -8,9 +8,9 @@
 
 namespace Vespolina\PartnerBundle\Document;
 
-use Vespolina\PartnerBundle\Model\Partner as AbstractPartner;
+use Vespolina\PartnerBundle\Model\OrganisationDetails as AbstractOrganisationDetails;
 
-abstract class BasePartner extends AbstractPartner
+class BaseOrganisationDetails extends AbstractOrganisationDetails
 {
     protected $id;
 

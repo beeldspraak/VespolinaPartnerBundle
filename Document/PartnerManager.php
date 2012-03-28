@@ -7,7 +7,7 @@
  */
 namespace Vespolina\PartnerBundle\Document;
 
-use Symfony\Component\DependencyInjection\Container;
+use Doctrine\ODM\MongoDB\DocumentManager;
 
 use Vespolina\PartnerBundle\Model\PartnerManager as BasePartnerManager;
 use Vespolina\PartnerBundle\Model\Partner as AbstractPartner;
@@ -20,12 +20,6 @@ class PartnerManager extends BasePartnerManager
      */
     protected $dm;
     
-    /**
-     * Dcotrine MongoDB DocumentRepository
-     * 
-     * @var \Vespolina\PartnerBundle\Document\PartnerRepository
-     */
-    protected $repo;
     
     /**
      * @var BasePartner $partnerClass
@@ -37,19 +31,18 @@ class PartnerManager extends BasePartnerManager
      */
     protected $partnerRoles;
     
-    public function __construct(Container $container, $partnerClass, array $partnerRoles)
+    public function __construct(DocumentManager $dm, $partnerClass, array $partnerRoles)
     {
-        $this->dm            = $container->get('doctrine.odm.mongodb.default_document_manager');
+        $this->dm            = $dm;
         $this->partnerClass  = $partnerClass;
         $this->partnerRoles  = $partnerRoles;
-        
-        $this->repo          = $this->dm->getRepository('Vespolina\PartnerBundle\Document\Partner');
         
         parent::__construct($partnerClass, $partnerRoles);
     }
     
-    public function findByPartnerId($partnerId)
+    public function findOneByPartnerId($partnerId)
     {
-        return $this->repo->findOneBy(array('partnerId' => $partnerId));
+        $qb = $this->dm->createQueryBuilder($this->partnerClass);
+        return $qb->find()->where(sprintf('partnerId = "%s"', $partnerId))->getQuery()->getSingleResult();
     }
 }

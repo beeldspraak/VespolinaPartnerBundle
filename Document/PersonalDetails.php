@@ -8,14 +8,7 @@
 
 namespace Vespolina\PartnerBundle\Document;
 
-use Vespolina\PartnerBundle\Model\Partner as AbstractPartner;
-
-abstract class BasePartner extends AbstractPartner
+class PersonalDetails extends BasePersonalDetails
 {
-    protected $id;
-
-    public function getId()
-    {
-        return $this->id;
-    }
+        
 }
