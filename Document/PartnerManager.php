@@ -7,6 +7,8 @@
  */
 namespace Vespolina\PartnerBundle\Document;
 
+use Vespolina\PartnerBundle\Model\PartnerInterface;
+
 use Doctrine\ODM\MongoDB\DocumentManager;
 
 use Vespolina\PartnerBundle\Model\PartnerManager as BasePartnerManager;
@@ -20,26 +22,40 @@ class PartnerManager extends BasePartnerManager
      */
     protected $dm;
     
-    
-    /**
-     * @var BasePartner $partnerClass
-     */
-    protected $partnerClass;
-    
-    /**
-     * @var array $partnerRoles
-     */
-    protected $partnerRoles;
-    
-    public function __construct(DocumentManager $dm, $partnerClass, array $partnerRoles)
+    public function __construct(DocumentManager $dm, $partnerClass, $partnerAddressClass, array $partnerRoles)
     {
-        $this->dm            = $dm;
-        $this->partnerClass  = $partnerClass;
-        $this->partnerRoles  = $partnerRoles;
+        $this->dm = $dm;
         
-        parent::__construct($partnerClass, $partnerRoles);
+        parent::__construct($partnerClass, $partnerAddressClass, $partnerRoles);
     }
     
+    /**
+     * {@inheritdoc}
+     */
+    public function updatePartner(PartnerInterface $partner, $andFlush = true)
+    {
+        $this->dm->persist($partner);
+        
+        if ($andFlush) {
+            $this->dm->flush();
+        }
+    }
+    
+    /**
+     * {@inheritdoc}
+     */
+    public function deletePartner(PartnerInterface $partner, $andFlush = true)
+    {
+        $this->dm->remove($partner);
+        
+        if ($andFlush) {
+            $this->dm->flush();
+        }
+    }
+    
+    /**
+     * {@inheritdoc}
+     */
     public function findOneByPartnerId($partnerId)
     {
         $qb = $this->dm->createQueryBuilder($this->partnerClass);
