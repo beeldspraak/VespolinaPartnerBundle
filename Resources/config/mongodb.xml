@@ -7,14 +7,22 @@
     <parameters>
         <parameter key="vespolina_partner.partner_manager.class">Vespolina\PartnerBundle\Document\PartnerManager</parameter>
         <parameter key="vespolina_partner.model.partner.class">Vespolina\PartnerBundle\Document\Partner</parameter>
+        <parameter key="vespolina_partner.model.partner_contact.class">Vespolina\PartnerBundle\Document\Contact</parameter>
         <parameter key="vespolina_partner.model.partner_address.class">Vespolina\PartnerBundle\Document\Address</parameter>
+        <parameter key="vespolina_partner.model.partner_personal_details.class">Vespolina\PartnerBundle\Document\PersonalDetails</parameter>
+        <parameter key="vespolina_partner.model.partner_organisation_details.class">Vespolina\PartnerBundle\Document\OrganisationDetails</parameter>
     </parameters>
 
     <services>
         <service id="vespolina_partner.partner_manager" class="%vespolina_partner.partner_manager.class%">
             <argument type="service" id="doctrine.odm.mongodb.default_document_manager" />
-            <argument>%vespolina_partner.model.partner.class%</argument>
-            <argument>%vespolina_partner.model.partner_address.class%</argument>
+            <argument type="collection">
+                <argument key="partnerClass">%vespolina_partner.model.partner.class%</argument>
+                <argument key="partnerContactClass">%vespolina_partner.model.partner_contact.class%</argument>
+                <argument key="partnerAddressClass">%vespolina_partner.model.partner_address.class%</argument>
+                <argument key="partnerPersonalDetailsClass">%vespolina_partner.model.partner_personal_details.class%</argument>
+                <argument key="partnerOrganisationDetailsClass">%vespolina_partner.model.partner_organisation_details.class%</argument>
+            </argument>
             <argument type="collection">
                 <argument>ROLE_CUSTOMER</argument>
                 <argument>ROLE_EMPLOYEE</argument>

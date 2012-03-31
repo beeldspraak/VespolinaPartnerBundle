@@ -11,5 +11,15 @@ use Vespolina\PartnerBundle\Document\BasePartner;
 
 class Partner extends BasePartner
 {
+    protected $dateOfBirth;
     
+    public function getDateOfBirth()
+    {
+        return $this->dateOfBirth;
+    }
+    
+    public function setDateOfBirth(\DateTime $dateOfBirth)
+    {
+        $this->dateOfBirth = $dateOfBirth;
+    }
 }

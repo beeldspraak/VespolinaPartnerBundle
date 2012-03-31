@@ -6,6 +6,8 @@
 
     <document name="Vespolina\PartnerBundle\Tests\Fixtures\Document\Partner" collection="vespolina_test_partners">
         <field name="id" id="true" />
+        
+        <field name="dateOfBirth" type="date" />
     </document>
 
 </doctrine-mongo-mapping>

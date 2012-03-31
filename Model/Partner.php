@@ -32,7 +32,6 @@ class Partner implements PartnerInterface
     protected $currency;
     protected $language;
     protected $paymentTerms;
-    protected $paymentType;
     protected $addresses;
     protected $primaryContact;
     protected $personalDetails;

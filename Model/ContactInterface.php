@@ -10,6 +10,20 @@ namespace Vespolina\PartnerBundle\Model;
 interface ContactInterface
 {
     /**
+     * Sets the name of the contact
+     * 
+     * @param string $name
+     */
+    function setName($name);
+    
+    /**
+     * The name of the contact
+     * 
+     * @return string
+     */
+    function getName();
+    
+    /**
      * Sets the contacts phone number
      * 
      * @param string $phone
