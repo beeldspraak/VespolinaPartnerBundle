@@ -7,17 +7,20 @@
     <parameters>
         <parameter key="vespolina_partner.partner_manager.class">Vespolina\PartnerBundle\Document\PartnerManager</parameter>
         <parameter key="vespolina_partner.model.partner.class">Vespolina\PartnerBundle\Document\Partner</parameter>
+        <parameter key="vespolina_partner.model.partner_address.class">Vespolina\PartnerBundle\Document\Address</parameter>
     </parameters>
 
     <services>
         <service id="vespolina_partner.partner_manager" class="%vespolina_partner.partner_manager.class%">
             <argument type="service" id="doctrine.odm.mongodb.default_document_manager" />
             <argument>%vespolina_partner.model.partner.class%</argument>
+            <argument>%vespolina_partner.model.partner_address.class%</argument>
             <argument type="collection">
                 <argument>ROLE_CUSTOMER</argument>
                 <argument>ROLE_EMPLOYEE</argument>
                 <argument>ROLE_SUPPLIER</argument>
             </argument>
         </service>
+        <service id="vespolina.partner_manager" alias="vespolina_partner.partner_manager" />
     </services>
 </container>
