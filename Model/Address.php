@@ -9,9 +9,9 @@ namespace Vespolina\PartnerBundle\Model;
 
 class Address implements AddressInterface
 {
-    const BOTH           = 'BOTH';
     const INVOICE        = 'INVOICE';
     const DELIVERY       = 'DELIVERY';
+    const CONTACT        = 'CONTACT';
     
     protected $type;
     protected $street;
