@@ -9,13 +9,34 @@ namespace Vespolina\PartnerBundle\Model;
 
 class Address implements AddressInterface
 {
-    private $street;
-    private $number;
-    private $numbersuffix;
-    private $zipcode;
-    private $city;
-    private $state;
-    private $country;
+    const INVOICE        = 'INVOICE';
+    const DELIVERY       = 'DELIVERY';
+    const CONTACT        = 'CONTACT';
+    
+    protected $type;
+    protected $street;
+    protected $number;
+    protected $numbersuffix;
+    protected $zipcode;
+    protected $city;
+    protected $state;
+    protected $country;
+    
+	/**
+	 * {@inheritdoc}
+	 */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+	/**
+	 * {@inheritdoc}
+	 */
+    public function setType($type)
+    {
+        $this->type = $type;
+    }
     
 	/**
 	 * {@inheritdoc}

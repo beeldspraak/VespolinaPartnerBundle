@@ -22,11 +22,18 @@ class PartnerManager extends BasePartnerManager
      */
     protected $dm;
     
-    public function __construct(DocumentManager $dm, $partnerClass, $partnerAddressClass, array $partnerRoles)
+    /**
+     * Constructor to setup the partner manager
+     * 
+     * @param DocumentManager $dm - Doctrine ODM DocumentManager
+     * @param array $classMapping - mapping for the partner class and his embedded classes
+     * @param array $partnerRoles - array with available partner roles
+     */
+    public function __construct(DocumentManager $dm, array $classMapping, array $partnerRoles)
     {
         $this->dm = $dm;
         
-        parent::__construct($partnerClass, $partnerAddressClass, $partnerRoles);
+        parent::__construct($classMapping, $partnerRoles);
     }
     
     /**

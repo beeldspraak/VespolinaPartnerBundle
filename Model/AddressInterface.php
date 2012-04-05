@@ -10,6 +10,18 @@ namespace Vespolina\PartnerBundle\Model;
 interface AddressInterface
 {
     /**
+     * Get address type
+     * @return string
+     */
+    function getType();
+    
+    /**
+     * Set type of address - e.g. invoice or delivery
+     * @param string $type
+     */
+    function setType($type);
+    
+    /**
      * Get street
      */
     function getStreet();

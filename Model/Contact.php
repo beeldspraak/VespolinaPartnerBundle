@@ -9,13 +9,28 @@ namespace Vespolina\PartnerBundle\Model;
 
 class Contact implements ContactInterface
 {
+    protected $name;
     protected $email;
     protected $phone;
     
     /**
-     * The email of the contact
-     * 
-     * @return string
+     * {@inheritdoc}
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+    
+    /**
+     * {@inheritdoc}
      */
     public function getEmail()
     {
@@ -23,9 +38,7 @@ class Contact implements ContactInterface
     }
 
     /**
-     * Sets the email of the contact
-     * 
-     * @param string $email
+     * {@inheritdoc}
      */
     public function setEmail($email)
     {
@@ -33,9 +46,7 @@ class Contact implements ContactInterface
     }
 
     /**
-     * The primary phonenumer of the contact
-     * 
-     * @return string
+     * {@inheritdoc}
      */
     public function getPhone()
     {
@@ -43,9 +54,7 @@ class Contact implements ContactInterface
     }
 
     /**
-     * Sets the primary phonenumber of the contact
-     * 
-     * @param string $phone
+     * {@inheritdoc}
      */
     public function setPhone($phone)
     {
