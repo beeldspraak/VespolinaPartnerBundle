@@ -10,6 +10,54 @@ namespace Vespolina\PartnerBundle\Model;
 interface PersonalDetailsInterface
 {
     /**
+     * Set initials of customer
+     * @param string $initials
+     */
+    function setInitials($initials);
+    
+    /**
+     * Get initials of customer
+     * @return string
+     */
+    function getInitials();
+    
+    /**
+     * Set firstname of customer
+     * @param string $firstname
+     */
+    function setFirstname($firstname);
+    
+    /**
+     * Get firstname of customer
+     * @return string
+     */
+    function getFirstname();
+    
+    /**
+     * Set prefix of customer
+     * @param string $prefix
+     */
+    function setPrefix($prefix);
+    
+    /**
+     * Get prefix of customer
+     * @return string
+     */
+    function getPrefix();
+    
+    /**
+     * Set lastname of customer
+     * @param string $lastname
+     */
+    function setLastname($lastname);
+    
+    /**
+     * Get lastname of customer
+     * @return string
+     */
+    function getLastname();
+    
+    /**
      * Set national identification number
      * @param string $nationalIdentificationNumber
      */

@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>  
+<constraint-mapping xmlns="http://symfony.com/schema/dic/constraint-mapping"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xsi:schemaLocation="http://symfony.com/schema/dic/constraint-mapping  
+        http://symfony.com/schema/dic/services/constraint-mapping-1.0.xsd">  
+        
+        <!-- 
+        <class name="Vespolina\PartnerBundle\Document\Partner">
+            <property name="name">
+                <constraint name="NotBlank" />
+            </property>
+        </class>
+         -->
+        
+        <class name="Vespolina\PartnerBundle\Document\Address">
+            <property name="street">
+                <constraint name="NotBlank" />
+            </property>
+            <property name="number">
+                <constraint name="Type">
+                    <option name="type">integer</option>
+                </constraint>
+            </property>
+        </class>
+</constraint-mapping>

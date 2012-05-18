@@ -9,8 +9,76 @@ namespace Vespolina\PartnerBundle\Model;
 
 class PersonalDetails implements PersonalDetailsInterface
 {
+    protected $initials;
+    protected $firstname;
+    protected $prefix;
+    protected $lastname;
     protected $nationalIdentificationNumber;
     
+	/**
+	 * {@inheritdoc}
+	 */
+    public function getInitials()
+    {
+        return $this->initials;
+    }
+
+	/**
+	 * {@inheritdoc}
+	 */
+    public function setInitials($initials)
+    {
+        $this->initials = $initials;
+    }
+
+	/**
+	 * {@inheritdoc}
+	 */
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+	/**
+	 * {@inheritdoc}
+	 */
+    public function setFirstname($firstname)
+    {
+        $this->firstname = $firstname;
+    }
+
+	/**
+	 * {@inheritdoc}
+	 */
+    public function getPrefix()
+    {
+        return $this->prefix;
+    }
+
+	/**
+	 * {@inheritdoc}
+	 */
+    public function setPrefix($prefix)
+    {
+        $this->prefix = $prefix;
+    }
+
+	/**
+	 * {@inheritdoc}
+	 */
+    public function getLastname()
+    {
+        return $this->lastname;
+    }
+
+	/**
+	 * {@inheritdoc}
+	 */
+    public function setLastname($lastname)
+    {
+        $this->lastname = $lastname;
+    }
+
 	/**
 	 * {@inheritdoc}
 	 */
