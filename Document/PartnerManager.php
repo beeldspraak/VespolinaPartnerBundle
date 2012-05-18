@@ -63,9 +63,35 @@ class PartnerManager extends BasePartnerManager
     /**
      * {@inheritdoc}
      */
+    public function find($id)
+    {
+        return $this->dm->getRepository($this->partnerClass)->find($id);
+    }
+    
+    /**
+     * {@inheritdoc}
+     */
     public function findOneByPartnerId($partnerId)
     {
         $qb = $this->dm->createQueryBuilder($this->partnerClass);
         return $qb->find()->where(sprintf('partnerId = "%s"', $partnerId))->getQuery()->getSingleResult();
+    }
+    
+    /**
+     * {@inheritdoc}
+     */
+    public function findAll()
+    {
+        return $this->dm->getRepository($this->partnerClass)->findAll();
+    }
+    
+    /**
+     * {@inheritdoc}
+     */
+    public function findAllByRole($role)
+    {
+        $result = $this->dm->getRepository($this->partnerClass)->findBy(array('roles' => $role));
+        
+        return $result;
     }
 }
