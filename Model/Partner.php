@@ -41,7 +41,7 @@ class Partner implements PartnerInterface
     {
         $this->addresses = new ArrayCollection();
     }
-
+    
     /**
      * @inheritdoc
      */
@@ -216,6 +216,14 @@ class Partner implements PartnerInterface
     public function addAddress($address)
     {
         $this->addresses[] = $address;
+    }
+    
+    /**
+     * @inheritdoc
+     */
+    public function removeAddress($address)
+    {
+        unset($this->addresses[array_find($address)]);
     }
 
     /**
