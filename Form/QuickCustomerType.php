@@ -8,11 +8,9 @@
 
 namespace Vespolina\PartnerBundle\Form;
 
+use Symfony\Component\Form\FormBuilderInterface;
 use Vespolina\PartnerBundle\Model\Partner;
-
 use Symfony\Component\Form\AbstractType;
-
-use Symfony\Component\Form\FormBuilder;
 
 class QuickCustomerType extends AbstractType
 {
@@ -21,10 +19,11 @@ class QuickCustomerType extends AbstractType
         return 'quick_customer';
     }
     
-    public function buildForm(FormBuilder $formBuilder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $formBuilder
+        $builder
             ->add('personalDetails', new PersonalDetailsType())
+            ->add('primaryContact', new SimpleContactType())
             ->add('address', new AddressType(), array(
                 'property_path'	=> false,
             ))

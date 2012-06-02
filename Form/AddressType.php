@@ -8,8 +8,8 @@
 
 namespace Vespolina\PartnerBundle\Form;
 
+use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormBuilder;
 
 class AddressType extends AbstractType
 {
@@ -18,7 +18,7 @@ class AddressType extends AbstractType
         return 'address';
     }
     
-    public function buildForm(FormBuilder $formBuilder, array $options)
+    public function buildForm(FormBuilderInterface $formBuilder, array $options)
     {
         $formBuilder
             ->add('street')
@@ -26,6 +26,7 @@ class AddressType extends AbstractType
             ->add('numbersuffix')
             ->add('zipcode')
             ->add('city')
+            ->add('country')
            ;
     }
     
