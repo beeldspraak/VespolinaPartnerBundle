@@ -8,8 +8,8 @@
 
 namespace Vespolina\PartnerBundle\Form;
 
-use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilder;
+use Symfony\Component\Form\AbstractType;
 
 class PersonalDetailsType extends AbstractType
 {

@@ -11,29 +11,24 @@ namespace Vespolina\PartnerBundle\Form;
 use Symfony\Component\Form\FormBuilder;
 use Symfony\Component\Form\AbstractType;
 
-class AddressType extends AbstractType
+class SimpleContactType extends AbstractType
 {
     public function getName()
     {
-        return 'address';
+        return 'simple_contact';
     }
     
     public function buildForm(FormBuilder $formBuilder, array $options)
     {
         $formBuilder
-            ->add('street')
-            ->add('number')
-            ->add('numbersuffix')
-            ->add('zipcode')
-            ->add('city')
-            ->add('country')
+            ->add('email')
            ;
     }
     
     public function getDefaultOptions(array $options = array())
     {
         return array(
-            'data_class' => 'Vespolina\PartnerBundle\Document\Address',
+            'data_class' => 'Vespolina\PartnerBundle\Document\Contact',
         );
     }
 }

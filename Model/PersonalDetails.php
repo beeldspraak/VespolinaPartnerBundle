@@ -14,6 +14,7 @@ class PersonalDetails implements PersonalDetailsInterface
     protected $prefix;
     protected $lastname;
     protected $nationalIdentificationNumber;
+    protected $partner;
     
 	/**
 	 * {@inheritdoc}
@@ -94,5 +95,21 @@ class PersonalDetails implements PersonalDetailsInterface
     {
         $this->nationalIdentificationNumber = $nationalIdentificationNumber;
     }
+    
+	/**
+	 * {@inheritdoc}
+	 */
+    public function getPartner()
+    {
+        return $this->partner;
+    }
 
+	/**
+	 * {@inheritdoc}
+	 */
+    public function setPartner(\Vespolina\PartnerBundle\Document\Partner $partner)
+    {
+        $partner->setPersonalDetails($this);
+        $this->partner = $partner;
+    }
 }

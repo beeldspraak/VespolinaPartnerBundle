@@ -68,4 +68,16 @@ interface PersonalDetailsInterface
      * @return string
      */
     function getNationalIdentificationNumber();
+    
+    /**
+     * Set the partner for this personalDetails
+     * @param Vespolina\PartnerBundle\Document\Partner
+     */
+    function setPartner(\Vespolina\PartnerBundle\Document\Partner $partner);
+    
+    /**
+     * Get the referenced partner
+     * @return Vespolina\PartnerBundle\Document\Partner
+     */
+    function getPartner();
 }
