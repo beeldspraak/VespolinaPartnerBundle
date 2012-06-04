@@ -21,8 +21,7 @@ class PersonalDetailsType extends AbstractType
     public function buildForm(FormBuilder $formBuilder, array $options)
     {
         $formBuilder
-            ->add('initials')
-            ->add('prefix')
+            ->add('firstname')
             ->add('lastname')
            ;
     }
@@ -30,6 +29,7 @@ class PersonalDetailsType extends AbstractType
     public function getDefaultOptions(array $options = array())
     {
         return array(
+            // @TODO: Fix MongoDB dependency
             'data_class' => 'Vespolina\PartnerBundle\Document\PersonalDetails',
         );
     }

@@ -26,13 +26,14 @@ class AddressType extends AbstractType
             ->add('numbersuffix')
             ->add('zipcode')
             ->add('city')
-            ->add('country')
+            ->add('country', 'country')
            ;
     }
     
     public function getDefaultOptions(array $options = array())
     {
         return array(
+            // @TODO: Fix MongoDB dependency
             'data_class' => 'Vespolina\PartnerBundle\Document\Address',
         );
     }
