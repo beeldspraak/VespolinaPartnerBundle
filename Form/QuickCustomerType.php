@@ -29,4 +29,12 @@ class QuickCustomerType extends AbstractType
             ))
            ;
     }
+
+    public function getDefaultOptions(array $options = array())
+    {
+        return array(
+            // @TODO: Fix MongoDB dependency
+            'data_class' => 'Vespolina\PartnerBundle\Document\Partner',
+        );
+    }
 }

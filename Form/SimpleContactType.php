@@ -21,13 +21,14 @@ class SimpleContactType extends AbstractType
     public function buildForm(FormBuilder $formBuilder, array $options)
     {
         $formBuilder
-            ->add('email')
+            ->add('email', null, array('required' => true))
            ;
     }
     
     public function getDefaultOptions(array $options = array())
     {
         return array(
+            // @TODO: Fix MongoDB dependency
             'data_class' => 'Vespolina\PartnerBundle\Document\Contact',
         );
     }
