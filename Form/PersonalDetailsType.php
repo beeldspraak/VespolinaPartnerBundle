@@ -8,7 +8,7 @@
 
 namespace Vespolina\PartnerBundle\Form;
 
-use Symfony\Component\Form\FormBuilder;
+use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\AbstractType;
 
 class PersonalDetailsType extends AbstractType
@@ -18,7 +18,7 @@ class PersonalDetailsType extends AbstractType
         return 'personal_details';
     }
     
-    public function buildForm(FormBuilder $formBuilder, array $options)
+    public function buildForm(FormBuilderInterface $formBuilder, array $options)
     {
         $formBuilder
             ->add('firstname')
