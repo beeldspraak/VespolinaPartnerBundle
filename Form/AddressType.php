@@ -13,6 +13,16 @@ use Symfony\Component\Form\AbstractType;
 
 class AddressType extends AbstractType
 {
+    /**
+     * @var string
+     */
+    private $dataClass;
+
+    public function __construct($dataClass)
+    {
+        $this->dataClass = $dataClass;
+    }
+
     public function getName()
     {
         return 'address';
@@ -21,11 +31,11 @@ class AddressType extends AbstractType
     public function buildForm(FormBuilderInterface $formBuilder, array $options)
     {
         $formBuilder
-            ->add('street')
-            ->add('number')
-            ->add('numbersuffix')
-            ->add('zipcode')
-            ->add('city')
+            ->add('street', null, array('required' => false))
+            ->add('number', null, array('required' => false))
+            ->add('numbersuffix', null, array('required' => false))
+            ->add('zipcode', null, array('required' => false))
+            ->add('city', null, array('required' => false))
             ->add('country', 'country')
            ;
     }
@@ -33,8 +43,7 @@ class AddressType extends AbstractType
     public function getDefaultOptions(array $options = array())
     {
         return array(
-            // @TODO: Fix MongoDB dependency
-            'data_class' => 'Vespolina\PartnerBundle\Document\Address',
+            'data_class' => $this->dataClass,
         );
     }
 }
