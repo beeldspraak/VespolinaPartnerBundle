@@ -9,11 +9,20 @@
 namespace Vespolina\PartnerBundle\Form;
 
 use Symfony\Component\Form\FormBuilderInterface;
-use Vespolina\PartnerBundle\Model\Partner;
 use Symfony\Component\Form\AbstractType;
 
 class QuickCustomerType extends AbstractType
 {
+    /**
+     * @var string
+     */
+    private $dataClass;
+
+    public function __construct($dataClass)
+    {
+        $this->dataClass = $dataClass;
+    }
+
     public function getName()
     {
         return 'quick_customer';
@@ -22,9 +31,9 @@ class QuickCustomerType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('personalDetails', new PersonalDetailsType())
-            ->add('primaryContact', new SimpleContactType())
-            ->add('address', new AddressType(), array(
+            ->add('personalDetails', 'vespolina.partner.personal_details_type')
+            ->add('primaryContact', 'vespolina.partner.simple_contact_type')
+            ->add('address', 'vespolina.partner.address_type', array(
                 'property_path'	=> false,
             ))
            ;
@@ -33,8 +42,7 @@ class QuickCustomerType extends AbstractType
     public function getDefaultOptions(array $options = array())
     {
         return array(
-            // @TODO: Fix MongoDB dependency
-            'data_class' => 'Vespolina\PartnerBundle\Document\Partner',
+            'data_class' => $this->dataClass,
         );
     }
 }

@@ -33,6 +33,8 @@ class VespolinaPartnerExtension extends Extension
         
         if (isset($config['classMapping']) && is_array($config['classMapping']))
             $this->configureClassMapping($container, $config['classMapping']);
+
+        $loader->load('partner.xml');
     }
     
     protected function configureClassMapping(ContainerBuilder $container, array $classMapping)

@@ -13,6 +13,16 @@ use Symfony\Component\Form\AbstractType;
 
 class SimpleContactType extends AbstractType
 {
+    /**
+     * @var string
+     */
+    private $dataClass;
+
+    public function __construct($dataClass)
+    {
+        $this->dataClass = $dataClass;
+    }
+
     public function getName()
     {
         return 'simple_contact';
@@ -28,8 +38,7 @@ class SimpleContactType extends AbstractType
     public function getDefaultOptions(array $options = array())
     {
         return array(
-            // @TODO: Fix MongoDB dependency
-            'data_class' => 'Vespolina\PartnerBundle\Document\Contact',
+            'data_class' => $this->dataClass,
         );
     }
 }

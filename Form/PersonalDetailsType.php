@@ -13,6 +13,16 @@ use Symfony\Component\Form\AbstractType;
 
 class PersonalDetailsType extends AbstractType
 {
+    /**
+     * @var string
+     */
+    private $dataClass;
+
+    public function __construct($dataClass)
+    {
+        $this->dataClass = $dataClass;
+    }
+
     public function getName()
     {
         return 'personal_details';
@@ -29,8 +39,7 @@ class PersonalDetailsType extends AbstractType
     public function getDefaultOptions(array $options = array())
     {
         return array(
-            // @TODO: Fix MongoDB dependency
-            'data_class' => 'Vespolina\PartnerBundle\Document\PersonalDetails',
+            'data_class' => $this->dataClass,
         );
     }
 }
