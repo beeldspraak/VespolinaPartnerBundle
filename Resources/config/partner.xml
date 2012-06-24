@@ -21,6 +21,10 @@
             <tag name="form.type" />
             <argument>%vespolina_partner.model.partner_address.class%</argument>
         </service>
+        <service id="vespolina.partner_manipulator" class="Vespolina\PartnerBundle\Util\PartnerManipulator">
+            <argument type="service" id="fos_user.user_manager"/>
+            <argument type="service" id="fos_user.util.user_manipulator"/>
+        </service>
     </services>
 
 </container>
