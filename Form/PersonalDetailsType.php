@@ -25,9 +25,9 @@ class PersonalDetailsType extends AbstractType
 
     public function getName()
     {
-        return 'personal_details';
+        return 'vespolina_partner_personal_details';
     }
-    
+
     public function buildForm(FormBuilderInterface $formBuilder, array $options)
     {
         $formBuilder

@@ -25,7 +25,7 @@ class AddressType extends AbstractType
 
     public function getName()
     {
-        return 'address';
+        return 'vespolina_partner_address';
     }
     
     public function buildForm(FormBuilderInterface $formBuilder, array $options)
