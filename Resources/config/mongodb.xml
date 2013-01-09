@@ -15,7 +15,7 @@
 
     <services>
         <service id="vespolina_partner.partner_manager" class="%vespolina_partner.partner_manager.class%">
-            <argument type="service" id="doctrine.odm.mongodb.default_document_manager" />
+            <argument type="service" id="doctrine_mongodb.odm.default_document_manager" />
             <argument type="collection">
                 <argument key="partnerClass">%vespolina_partner.model.partner.class%</argument>
                 <argument key="partnerContactClass">%vespolina_partner.model.partner_contact.class%</argument>

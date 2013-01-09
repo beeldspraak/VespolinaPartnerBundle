@@ -25,7 +25,7 @@ class SimpleContactType extends AbstractType
 
     public function getName()
     {
-        return 'simple_contact';
+        return 'vespolina_partner_simple_contact';
     }
     
     public function buildForm(FormBuilderInterface $formBuilder, array $options)

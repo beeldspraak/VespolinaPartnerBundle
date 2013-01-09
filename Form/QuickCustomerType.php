@@ -31,9 +31,9 @@ class QuickCustomerType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('personalDetails', 'vespolina.partner.personal_details_type')
-            ->add('primaryContact', 'vespolina.partner.simple_contact_type')
-            ->add('address', 'vespolina.partner.address_type', array(
+            ->add('personalDetails', 'vespolina_partner_personal_details')
+            ->add('primaryContact', 'vespolina_partner_simple_contact')
+            ->add('address', 'vespolina_partner_address', array(
                 'property_path'	=> false,
             ))
            ;
