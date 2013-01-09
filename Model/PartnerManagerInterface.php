@@ -82,7 +82,7 @@ interface PartnerManagerInterface
      * Returns all partners for given role
      * 
      * @param string $role
-     * @return Doctrine\MongoDB\Collection
+     * @return Doctrine\Common\Collections\Collection
      */
     function findAllByRole($role);
     
